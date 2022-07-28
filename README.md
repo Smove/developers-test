@@ -65,8 +65,8 @@ After finishing - please push your code in your github/bitbucket account, and se
 ###Result
 Please put result of your work in your Github or Bitbucket account, and send link back.
 
-### Hints
+## Hints
 
-## My result is different from the original in some cases:
+### My result is different from the original in some cases:
 1. Action "plus" results in an first line "0;90;90" from neuffer output. But this line never appears anywhere in test.csv. Maybe it's the BOM?
 2. This readme says numbers should only be written if the result is greater than zero (null), but the neuffer output contains zero results. -> Readme says, we should log results below zero and write above zero, but what happens results equals zero?
