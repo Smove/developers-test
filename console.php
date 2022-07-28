@@ -1,46 +1,8 @@
 <?php
 
-$shortopts = "a:f:";
-$longopts  = array(
-    "action:",
-    "file:",
-);
+use Jan\DevelopersTest\Application;
 
-$options = getopt($shortopts, $longopts);
+include_once __DIR__ . '/autoload.php';
 
-if(isset($options['a'])) {
-    $action = $options['a'];
-} elseif(isset($options['action'])) {
-    $action = $options['action'];
-} else {
-    $action = "xyz";
-}
-
-if(isset($options['f'])) {
-    $file = $options['f'];
-} elseif(isset($options['file'])) {
-    $file = $options['file'];
-} else {
-    $file = "notexists.csv";
-}
-
-try {
-    if ($action == "plus") {
-        include 'files/ClassOne.php';
-        $classOne = new ClassOne($file);
-    } elseif ($action == "minus") {
-        include 'files/ClassTwo.php';
-        $classTwo = new ClassTwo($file, "minus");
-        $classTwo->start();
-    } elseif ($action == "multiply") {
-        include 'files/Classthree.php';
-        $classThree = new Classthree();
-        $classThree->setFile($file);
-        $classThree->execute();
-    } elseif ($action == "division") {
-        include 'files/classFour.php';
-        $classFouyr = new classFour($file);
-    } else {
-        throw new \Exception("Wrong action is selected");
-    }
-} catch (\Exception $exception) {}
+$application = new Application();
+exit($application->run());

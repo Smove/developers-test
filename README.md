@@ -32,7 +32,7 @@ As result in CSV file you should write:
 10 20 30 <br/>
 -3 5 2 
 
-And in log file, something like "_numbers are - 30 and 20 are wrong_"
+And in log file, something like "_numbers -30 and 20 are wrong_"
 
 **Example 2**
 
@@ -48,8 +48,8 @@ As result in CSV file you should write:
 
 And in log file, something like:
  
-_numbers are -30 and 20 are wrong_ <br/>
-_numbers are 3 and 0 are wrong, is not allowed_ <br/>
+_numbers -30 and 20 are wrong_ <br/>
+_numbers 3 and 0 are wrong, is not allowed_ <br/>
 
 ##Task 
 You need to refactor code and write it on proper way. Just do your best: update/delete/add code as you wish.
@@ -65,3 +65,8 @@ After finishing - please push your code in your github/bitbucket account, and se
 ###Result
 Please put result of your work in your Github or Bitbucket account, and send link back.
 
+### Hints
+
+## My result is different from the original in some cases:
+1. Action "plus" results in an first line "0;90;90" from neuffer output. But this line never appears anywhere in test.csv. Maybe it's the BOM?
+2. This readme says numbers should only be written if the result is greater than zero (null), but the neuffer output contains zero results. -> Readme says, we should log results below zero and write above zero, but what happens results equals zero?
